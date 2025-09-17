@@ -227,7 +227,7 @@ else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
     Console.WriteLine("");
     Console.WriteLine("A big Railcannon on your ship (does 7500 damage)");
     Console.WriteLine("The Railcannon auto aims");
-    string railcannon_chose = Console.ReadLine().Trim().ToUpper();
+    string railcannon_chose = Console.ReadLine();
     if (bile_titan > 0)
     {
         Console.WriteLine("");
@@ -251,44 +251,59 @@ else if (string.Join('|', input) == string.Join('|', bomb_500kg))
     Console.WriteLine("Very big bomb and with a precise strike you can kill anybody");
     Console.WriteLine("You threw randomy and hoped for the best");
 
-        Random hello = new Random();
-        int hello1 = hello.Next(1, 6);
+    Random hello = new Random();
+    int hello1 = hello.Next(1, 6);
 
-        if (hello1 == 1)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("You hit bile titan 1 directly on him, you killed emm");
-            bile_titan -= 10000;
-        }
-        else if (hello1 == 2)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("You hit bile titan 2 directly on him, You killed emm");
-            bile_titan2 -= 10000;
-        }
-        else if (hello1 == 3)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("You hit bile titan 1 right beside it, didnt kill him but you did a lot of damage");
-            bile_titan -= 3750;
-        }
-        else if (hello1 == 4)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("You hit bile titan 2 right beside it, didnt kill him but you did a lot of damage");
-            bile_titan2 -= 3750;
-        }
-        else if (hello1 == 5)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("Didnt hit any of them, unlucky");
-        }
+    if (hello1 == 1)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("You hit bile titan 1 directly on him, you killed emm");
+        bile_titan -= 10000;
+    }
+    else if (hello1 == 2)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("You hit bile titan 2 directly on him, You killed emm");
+        bile_titan2 -= 10000;
+    }
+    else if (hello1 == 3)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("You hit bile titan 1 right beside it, didnt kill him but you did a lot of damage");
+        bile_titan -= 3750;
+    }
+    else if (hello1 == 4)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("You hit bile titan 2 right beside it, didnt kill him but you did a lot of damage");
+        bile_titan2 -= 3750;
+    }
+    else if (hello1 == 5)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Didnt hit any of them, unlucky");
+    }
 
 }
 
 else if (string.Join('|', input) == string.Join('|', Quasar_Cannon))
 {
+    Console.WriteLine("You used Quasar Cannon");
     Console.WriteLine("");
+    Console.WriteLine("A laser cannon, needs to be charged up to deal damage");
+    Console.WriteLine("Does 2150 damage");
+    Console.WriteLine("Who do you shot");
+    string Quasar_shot = Console.ReadLine().Trim().ToUpper();
+    if (Quasar_shot == "BILE TITAN 1")
+    {
+        Console.WriteLine("Did 2150 damage to Bile titan 1");
+        bile_titan -= 2150;
+    }
+    else if (Quasar_shot == "BILE TITAN 2")
+    {
+        Console.WriteLine("Did 2150 damage to Bile titan 2");
+        bile_titan2 -= 2150;
+    }
 }
 
 else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
