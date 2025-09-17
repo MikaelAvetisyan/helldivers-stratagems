@@ -12,3 +12,4 @@ C:\Users\mikael.avetisyan\Downloads\programering\helldivers stratagems\helldiver
 C:\Users\mikael.avetisyan\Downloads\programering\helldivers stratagems\helldivers\obj\Debug\net9.0\helldivers.pdb
 C:\Users\mikael.avetisyan\Downloads\programering\helldivers stratagems\helldivers\obj\Debug\net9.0\helldivers.genruntimeconfig.cache
 C:\Users\mikael.avetisyan\Downloads\programering\helldivers stratagems\helldivers\obj\Debug\net9.0\ref\helldivers.dll
+C:\Users\mikael.avetisyan\Downloads\programering\helldivers stratagems\helldivers\obj\Debug\net9.0\helldivers.sourcelink.json
