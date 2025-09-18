@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
+using System.ComponentModel;
 
 //add While loop
 //add stratagem type
@@ -12,8 +13,11 @@ Console.WriteLine(@"
  | __ / -_) | / _` | \ V / -_) '_| \__ \  _| '_/ _` |  _/ _` / _` / -_) '  \  | (_ / _` | '  \/ -_)
  |_||_\___|_|_\__,_|_|\_/\___|_|   |___/\__|_| \__,_|\__\__,_\__, \___|_|_|_|  \___\__,_|_|_|_\___|
                                                              |___/                                 ");
-Console.WriteLine("There are 2 bile titans infront of you, what stratagem do you use (use arrow keys)");
+Console.WriteLine("Welcome to Helldiver Stratagem Game, press enter to continue");
 Console.ReadLine();
+Console.WriteLine("Your spreding democresy and a big worm drilled up to the surface");
+Console.WriteLine("The big worms name is THE HIVE LORD");
+Console.WriteLine();
 Console.WriteLine("------------ Stratagems available ------------");
 Console.WriteLine("Railgun => Down - Right - Down - Up - Left - Right");
 Console.WriteLine("Commando Rocket Launcher => Down - Left - Up - Down - Right");
@@ -36,8 +40,7 @@ Console.WriteLine("Expendable Napalm => Down - Down - Left - Up - Left");
 Console.WriteLine("Solo Silo => Down - Up - Right - Down - Down");
 Console.WriteLine("");
 
-int bile_titan = 6500;
-int bile_titan2 = 6500;
+int Hive_lord = 25000;
 int Helldiver = 150;
 
 List<ConsoleKey> input = new List<ConsoleKey>();
@@ -51,7 +54,6 @@ while ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter)
         Console.WriteLine(key);
     }
 }
-
 
 ConsoleKey[] Railgun = { ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
 
@@ -87,10 +89,7 @@ if (string.Join('|', input) == string.Join('|', Railgun))
 {
   Console.WriteLine(@"                                                  
                                                   
-                                                  
-                                                  
-                                                  
-                                                  
+                     
                                                   
        .=:   :==-.  .-- -========:......          
        :*%@=@%**#@**@#= #@@@@@@@@@@@@@@@*.        
@@ -107,11 +106,7 @@ if (string.Join('|', input) == string.Join('|', Railgun))
     .--====== :==:.:                              
            :===:                                  
                                                   
-                                                  
-                                                  
-                                                  
-                                                  
-                                                  ");
+ ");
   Console.WriteLine("You used a Railgun");
   Console.WriteLine();
   Console.WriteLine("Do you.....");
@@ -126,74 +121,28 @@ if (string.Join('|', input) == string.Join('|', Railgun))
     {
       Console.WriteLine();
       Console.WriteLine("Full charge successful");
-      Console.WriteLine("who do you attack");
-      Console.WriteLine("Bile titan 1 or ....");
-      Console.WriteLine("Bile titan 2");
-      string attack123 = Console.ReadLine().Trim().ToUpper();
-
-      if (attack123 == "BILE TITAN 1")
-      {
-        Console.WriteLine();
-        Console.WriteLine("You attacked Bile titan 1");
-        Console.WriteLine("Attack damage = 1500");
-        bile_titan -= 1500;
-      }
-
-      else if (attack123 == "BILE TITAN 2")
-      {
-        Console.WriteLine("");
-        Console.WriteLine("You attacked Bile titan 2");
-        Console.WriteLine("Attack damage = 1500");
-        bile_titan2 -= 1500;
-      }
-
-      else
-      {
-        Console.WriteLine("");
-        Console.WriteLine("Try again.....");
-      }
+      Console.WriteLine("You shot the HIVE LORD"); ;
+      Hive_lord -= 2000;
+      Console.WriteLine("You delt 2000 damage to HIVE LORD");
     }
 
     else if (rando == 4)
     {
       Console.WriteLine();
-      Console.WriteLine("You charged the railgun and the kaboom");
-      Console.WriteLine("insta death");
+      Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
+      Console.WriteLine("You died because you charged the railcannon to much");
       Helldiver -= 150;
     }
 
   }
+
   else if (charge == "SAFE CHARGE")
   {
     Console.WriteLine();
     Console.WriteLine("Safe charge");
-    Console.WriteLine("damage done = 600");
-    Console.WriteLine("who do you attack");
-    Console.WriteLine("Bile titan 1 or ....");
-    Console.WriteLine("Bile titan 2");
-    string safe_attack = Console.ReadLine().Trim().ToUpper();
-
-    if (safe_attack == "BILE TITAN 1")
-    {
-      Console.WriteLine();
-      Console.WriteLine("You attacked Bile titan 1");
-      Console.WriteLine("Attack damage = 600");
-      bile_titan -= 600;
-    }
-
-    else if (safe_attack == "BILE TITAN 2")
-    {
-      Console.WriteLine("");
-      Console.WriteLine("You attacked Bile titan 2");
-      Console.WriteLine("Attack damage = 600");
-      bile_titan2 -= 600;
-    }
-
-    else
-    {
-      Console.WriteLine(""); //add X
-      Console.WriteLine("Try again.....");
-    }
+    Console.WriteLine("You shot the HIVE LORD");
+    Hive_lord -= 600;
+    Console.WriteLine("Damage done = 600");
   }
 }
 
@@ -229,29 +178,10 @@ else if (string.Join('|', input) == string.Join('|', Commando))
   Console.WriteLine("You used a The Commando");
   Console.WriteLine();
   Console.WriteLine("Rocket launcher, has a laser that the rockets follow");
-  Console.WriteLine("Do you shot the....");
-  Console.WriteLine("Bile titan 1 or");
-  Console.WriteLine("Bile titan 2");
-  string commando_biletitan = Console.ReadLine().Trim().ToUpper();
-  if (commando_biletitan == "BILE TITAN 1")
-  {
-    Console.WriteLine("");
-    Console.WriteLine("You did 5000 damage");
-    bile_titan -= 5000;
-  }
-
-  else if (commando_biletitan == "BILE TITAN 2")
-  {
-    Console.WriteLine("");
-    Console.WriteLine("You did 5000 damage");
-    bile_titan2 -= 5000;
-  }
-
-  else
-  {
-    Console.WriteLine(""); //add X
-    Console.WriteLine("Try again.....");
-  }
+  Console.WriteLine();
+  Console.WriteLine("You shot the HIVE LORD");
+  Console.WriteLine("You delt 5000 damage to the HIVE LORD");
+  Hive_lord -= 5000;
 }
 
 else if (string.Join('|', input) == string.Join('|', Orbital_laser))
@@ -285,25 +215,19 @@ else if (string.Join('|', input) == string.Join('|', Orbital_laser))
                                                   ");
   Console.WriteLine("You used Orbital laser");
   Console.WriteLine();
-  Console.WriteLine("Orbital laser will be up for 10 sec");
+  Console.WriteLine("Orbital laser will be up for 25 sec");
   Console.WriteLine("Orbital laser does 600 DPS");
   Console.WriteLine("The orbital laser auto aims");
-  if (bile_titan > 0)
-  {
-    Console.WriteLine("you did 5000 damage to bile titan 1");
-    bile_titan -= 5000;
-  }
-
-  else if (bile_titan < 0)
-  {
-    Console.WriteLine("You did 5000 damage to bile titan 2");
-    bile_titan2 -= 5000;
-  }
+  Console.WriteLine();
+  Console.WriteLine("You shot the HIVE LORD");
+  Console.WriteLine("Damage done = 15000");
+  Hive_lord -= 15000;
 }
 
 else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
 {
-  Console.WriteLine(@"                                                                               
+  Console.WriteLine(@" 
+
                       +:                          
                       #@*:                        
                       #@@@*                       
@@ -328,10 +252,10 @@ else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
   Console.WriteLine("You used The Orbital Napalm Barrage");
   Console.WriteLine();
   Console.WriteLine("A Barrage of fire missiles from the sky");
-  Console.WriteLine("The Napalm Barrage is so strong that it kills both bile titans");
-  Console.WriteLine("Kills both");
-  bile_titan -= 6500;
-  bile_titan2 -= 6500;
+  Console.WriteLine("You used the Napalm on hive lord");
+  Console.WriteLine();
+  Console.WriteLine("Damage done = 7500");
+  Hive_lord -= 7500;
 }
 
 else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
@@ -364,24 +288,12 @@ else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
                                                   
                                                   ");
   Console.WriteLine("You used The Orbital Railcannon Striker");
-  Console.WriteLine("");
-  Console.WriteLine("A big Railcannon on your ship (does 7500 damage)");
+  Console.WriteLine();
+  Console.WriteLine("A big Railcannon on your ship, very good for big enemys with heavy armor");
   Console.WriteLine("The Railcannon auto aims");
-  string railcannon_chose = Console.ReadLine();
-  if (bile_titan > 0)
-  {
-    Console.WriteLine("");
-    Console.WriteLine("You struck Bile titan 1");
-    Console.WriteLine("Bile titan 1 dead");
-    bile_titan -= 7500;
-  }
-  else if (bile_titan < 0)
-  {
-    Console.WriteLine("");
-    Console.WriteLine("You struck Bile titan 2");
-    Console.WriteLine("Bile titan 2 dead");
-    bile_titan2 -= 7500;
-  }
+  Console.WriteLine();
+  Console.WriteLine("Railcannon does = 7500 damage");
+  Hive_lord -= 7500;
 }
 
 else if (string.Join('|', input) == string.Join('|', bomb_500kg))
@@ -419,36 +331,25 @@ else if (string.Join('|', input) == string.Join('|', bomb_500kg))
   Console.WriteLine("You threw randomy and hoped for the best");
 
   Random hello = new Random();
-  int hello1 = hello.Next(1, 6);
+  int hello1 = hello.Next(1, 4);
 
   if (hello1 == 1)
   {
-    Console.WriteLine("");
-    Console.WriteLine("You hit bile titan 1 directly on him, you killed emm");
-    bile_titan -= 10000;
+    Console.WriteLine("You hit the HIVE LORD diractly");
+    Console.WriteLine("You did 5200 damage");
+    Hive_lord -= 5200;
   }
+
   else if (hello1 == 2)
   {
-    Console.WriteLine("");
-    Console.WriteLine("You hit bile titan 2 directly on him, You killed emm");
-    bile_titan2 -= 10000;
+    Console.WriteLine("The 500kg bomb landed right beside the HIVE LORD");
+    Console.WriteLine("You did 2400 damage");
+    Hive_lord -= 2400;
   }
+
   else if (hello1 == 3)
   {
-    Console.WriteLine("");
-    Console.WriteLine("You hit bile titan 1 right beside it, didnt kill him but you did a lot of damage");
-    bile_titan -= 3750;
-  }
-  else if (hello1 == 4)
-  {
-    Console.WriteLine("");
-    Console.WriteLine("You hit bile titan 2 right beside it, didnt kill him but you did a lot of damage");
-    bile_titan2 -= 3750;
-  }
-  else if (hello1 == 5)
-  {
-    Console.WriteLine("");
-    Console.WriteLine("Didnt hit any of them, unlucky");
+    Console.WriteLine("You missed, what a shame");
   }
 
 }
@@ -479,21 +380,12 @@ else if (string.Join('|', input) == string.Join('|', Quasar_Cannon))
                                                   
  ");
   Console.WriteLine("You used Quasar Cannon");
-  Console.WriteLine("");
-  Console.WriteLine("A laser cannon, needs to be charged up to deal damage");
+  Console.WriteLine();
+  Console.WriteLine("A laser cannon, needs to be charged up to deal real damage");
+  Console.WriteLine();
   Console.WriteLine("Does 2150 damage");
-  Console.WriteLine("Who do you shot");
-  string Quasar_shot = Console.ReadLine().Trim().ToUpper();
-  if (Quasar_shot == "BILE TITAN 1")
-  {
-    Console.WriteLine("Did 2150 damage to Bile titan 1");
-    bile_titan -= 2150;
-  }
-  else if (Quasar_shot == "BILE TITAN 2")
-  {
-    Console.WriteLine("Did 2150 damage to Bile titan 2");
-    bile_titan2 -= 2150;
-  }
+  Console.WriteLine("You shot the HIVE LORD");
+  Hive_lord -= 2150;
 }
 
 else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
@@ -561,6 +453,7 @@ else if (string.Join('|', input) == string.Join('|', True_flag))
                                                   ");
   Console.WriteLine("You got the True Flag, a symbol of hope");
   Console.WriteLine("You put the flag down and Salut");
+  Console.WriteLine("What? you expected something else, its a flag");
 }
 
 else if (string.Join('|', input) == string.Join('|', Autocannon_Sentry))
@@ -592,21 +485,13 @@ else if (string.Join('|', input) == string.Join('|', Autocannon_Sentry))
   Console.WriteLine("");
   Console.WriteLine("Auto cannon is a very strong sentry that can kill anybody");
   Console.WriteLine("You did 100% damage on one of the bile titan and put the other one on half hp");
-  Console.WriteLine("Do you attack....");
-  Console.WriteLine("Bile titan 1 or");
-  Console.WriteLine("Bile titan 2");
-  string autoattack = Console.ReadLine().Trim().ToUpper();
-  if (autoattack == "BILE TITAN 1")
-  {
-    bile_titan -= 6500;
-    bile_titan2 -= 3750;
-  }
-  else if (autoattack == "BILE TITAN 2")
-  {
-    bile_titan2 -= 6500;
-    bile_titan -= 3750;
-  }
+  Console.WriteLine("");
+  Console.WriteLine("You did 16000 damage to HIVE LORD");
+  Hive_lord -= 16000;
+
 }
+
+//____________________________________________________________________________________________
 
 else if (string.Join('|', input) == string.Join('|', Rocket_Sentry))
 {
@@ -635,7 +520,9 @@ else if (string.Join('|', input) == string.Join('|', Rocket_Sentry))
                                                   
   ");
 
-  Console.WriteLine("");                                                                           
+  Console.WriteLine("You used the Rocket sentry");
+  Console.WriteLine();
+  Console.WriteLine("");
 }
 
 else if (string.Join('|', input) == string.Join('|', Emancipator_Exosuit))
