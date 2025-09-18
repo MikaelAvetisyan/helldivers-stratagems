@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("helldivers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3cdb65f65d92f9df641b87d96e7b3dab33a2c319")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+761f398bffaa0fa11671f905d2deb64340092cf7")]
 [assembly: System.Reflection.AssemblyProductAttribute("helldivers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("helldivers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
