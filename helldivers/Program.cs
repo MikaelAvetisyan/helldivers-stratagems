@@ -8,6 +8,7 @@ using System.ComponentModel;
 //add While loop
 //add stratagem type
 //add status of the hive lord
+//add arrows to the to the commands
 Console.WriteLine(@" 
   _  _     _ _    _ _               ___ _            _                          ___                
  | || |___| | |__| (_)_ _____ _ _  / __| |_ _ _ __ _| |_ __ _ __ _ ___ _ __    / __|__ _ _ __  ___ 
@@ -634,12 +635,14 @@ else if (string.Join('|', input) == string.Join('|', Expendable_Napalm))
                                                   
 
 ");
+  Console.WriteLine("You used Expendable Napalm");
   Console.WriteLine("");
+  Console.WriteLine("A rocket louncher with a napalm cluster bomb");
+  Console.WriteLine("Burns anything in its way");
+  Console.WriteLine("You shot the Expendable Napalm on the HIVE LORD");
   Console.WriteLine("");
-  Console.WriteLine("");
-  Console.WriteLine("");
-  Console.WriteLine("");
-  Console.WriteLine("");
+  Console.WriteLine("You did 2 000 damage on the HIVE LORD");
+  Hive_lord -= 2000;
 }
 
 else if (string.Join('|', input) == string.Join('|', Solo_Silo))
@@ -670,7 +673,14 @@ else if (string.Join('|', input) == string.Join('|', Solo_Silo))
    +#****************************************#+   
                                                   
 ");
+  Console.WriteLine("You used the Solo Silo");
   Console.WriteLine("");
+  Console.WriteLine("The Solo Silo get placed on the ground, a Missile come's out");
+  Console.WriteLine("With the missle come's out a pistol with laser on it, where every you point the laser on, thats where the missile go");
+  Console.WriteLine("You pointed it on the Hive lord");
+  Console.WriteLine("");
+  Console.WriteLine("The solo silo did 4 500 damage");
+  Hive_lord -= 4500;
 }
 
 else
