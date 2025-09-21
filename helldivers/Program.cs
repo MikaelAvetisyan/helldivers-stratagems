@@ -5,10 +5,14 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.ComponentModel;
 
-//add While loop
-//add stratagem type
-//add status of the hive lord
+Console.SetBufferSize(300, 1000); 
+Console.SetWindowSize(200, 60);
+//add status of the hive lord (make better)
 //add arrows to the to the commands
+int Hive_lord = 30000;
+int Helldiver = 150;
+
+
 Console.WriteLine(@" 
   _  _     _ _    _ _               ___ _            _                          ___                
  | || |___| | |__| (_)_ _____ _ _  / __| |_ _ _ __ _| |_ __ _ __ _ ___ _ __    / __|__ _ _ __  ___ 
@@ -17,80 +21,80 @@ Console.WriteLine(@"
                                                              |___/                                 ");
 Console.WriteLine("------ Welcome to Helldiver Stratagem Game, press enter to continue ------");
 Console.ReadLine();
-Console.WriteLine("Your spreding democracy and a big worm drilled up to the surface");
-Console.WriteLine("The big worms name is THE HIVE LORD");
+Console.WriteLine("You are spreading democracy and a big worm drilled up to the surface");
+Console.WriteLine("The big worm's name is THE HIVE LORD");
 Console.WriteLine("HIVE LORD HP = 30 000");
 Console.WriteLine();
-Console.WriteLine("------------ Stratagems available ------------");
-Console.WriteLine("Railgun => Down - Right - Down - Up - Left - Right");
-Console.WriteLine("Commando Rocket Launcher => Down - Left - Up - Down - Right");
-
-Console.WriteLine("Orbital Laser => Right - Down - Up - Right - Down");
-Console.WriteLine("Orbital Napalm Barrage => Right - Right - Down - Left - Right");
-Console.WriteLine("Orbital Railcannon Strike => Right - Up - Down - Down - Right");
-Console.WriteLine("500kg Bomb => Up - Right - Down - Down - Down");
-
-Console.WriteLine("Quasar Cannon => Down - Down - Up - Left - Right");
-Console.WriteLine("Shield Generator Pack => Down - Up - Left - Right - Left - Right");
-Console.WriteLine("True flag => Down - Up - Right - Right");
-
-Console.WriteLine("Autocannon Sentry => Down - Up - Right - Up - Left - Up");
-Console.WriteLine("Rocket Sentry => Down - Up - Right - Right - Left");
-Console.WriteLine("Emancipator Exosuit => Left - Down - Right - Up");
-
-Console.WriteLine("Portable Hellbomb => Down - Right - Up - Up - Up");
-Console.WriteLine("Expendable Napalm => Down - Down - Left - Up - Left");
-Console.WriteLine("Solo Silo => Down - Up - Right - Down - Down");
-Console.WriteLine("");
-
-int Hive_lord = 30000;
-int Helldiver = 150;
-
-List<ConsoleKey> input = new List<ConsoleKey>();
-ConsoleKey key;
-
-while ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter)
+while (true)
 {
+  Console.WriteLine("------------ Stratagems available ------------");
+  Console.WriteLine("Railgun => Down - Right - Down - Up - Left - Right");
+  Console.WriteLine("Commando Rocket Launcher => Down - Left - Up - Down - Right");
+  Console.WriteLine("Quasar Cannon => Down - Down - Up - Left - Right");
+  Console.WriteLine("Shield Generator Pack => Down - Up - Left - Right - Left - Right");
+  Console.WriteLine("True flag => Down - Up - Right - Right - Down");
+  Console.WriteLine("Expendable Napalm => Down - Down - Left - Up - Left");
+  Console.WriteLine("Solo Silo => Down - Up - Right - Down - Down");
+  Console.WriteLine();
+  Console.WriteLine("Orbital Laser => Right - Down - Up - Right - Down");
+  Console.WriteLine("Orbital Napalm Barrage => Right - Right - Down - Left - Right - Up");
+  Console.WriteLine("Orbital Railcannon Strike => Right - Up - Down - Down - Right");
+  Console.WriteLine("500kg Bomb => Up - Right - Down - Down - Down");
+  Console.WriteLine();
+  Console.WriteLine("Autocannon Sentry => Down - Up - Right - Up - Left - Up");
+  Console.WriteLine("Rocket Sentry => Down - Up - Right - Right - Left");
+  Console.WriteLine("Emancipator Exosuit => Left - Down - Right - Up - Left - Down - Up");
+  Console.WriteLine();
+  Console.WriteLine("Portable Hellbomb => Down - Right - Up - Up - Up");
+  Console.WriteLine("");
+
+
+
+  List<ConsoleKey> input = new List<ConsoleKey>();
+  ConsoleKey key;
+
+  while ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter)
+  {
     if (key == ConsoleKey.UpArrow || key == ConsoleKey.RightArrow || key == ConsoleKey.DownArrow || key == ConsoleKey.LeftArrow)
     {
-        input.Add(key);
-        Console.WriteLine(key);
+      input.Add(key);
+      Console.WriteLine(key);
     }
-}
+  }
 
-ConsoleKey[] Railgun = { ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
+  ConsoleKey[] Railgun = { ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
 
-ConsoleKey[] Commando = { ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow };
+  ConsoleKey[] Commando = { ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow };
 
-ConsoleKey[] Orbital_laser = { ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow };
+  ConsoleKey[] Orbital_laser = { ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow };
 
-ConsoleKey[] Orbital_Napalm_Barrage = { ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow };
+  ConsoleKey[] Orbital_Napalm_Barrage = { ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow };
 
-ConsoleKey[] Orbital_Railcannon_Strike = { ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow };
+  ConsoleKey[] Orbital_Railcannon_Strike = { ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow };
 
-ConsoleKey[] bomb_500kg = { ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow };
+  ConsoleKey[] bomb_500kg = { ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow };
 
-ConsoleKey[] Quasar_Cannon = { ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
+  ConsoleKey[] Quasar_Cannon = { ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
 
-ConsoleKey[] Shield_Generator_Pack = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
+  ConsoleKey[] Shield_Generator_Pack = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow };
 
-ConsoleKey[] True_flag = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow };
+  ConsoleKey[] True_flag = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow };
 
-ConsoleKey[] Autocannon_Sentry = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow };
+  ConsoleKey[] Autocannon_Sentry = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow };
 
-ConsoleKey[] Rocket_Sentry = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow };
+  ConsoleKey[] Rocket_Sentry = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow };
 
-ConsoleKey[] Emancipator_Exosuit = { ConsoleKey.LeftArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow };
+  ConsoleKey[] Emancipator_Exosuit = { ConsoleKey.LeftArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow, ConsoleKey.DownArrow, ConsoleKey.UpArrow };
 
-ConsoleKey[] Portable_Hellbomb = { ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.UpArrow, ConsoleKey.UpArrow };
+  ConsoleKey[] Portable_Hellbomb = { ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.UpArrow, ConsoleKey.UpArrow, ConsoleKey.UpArrow };
 
-ConsoleKey[] Expendable_Napalm = { ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow };
+  ConsoleKey[] Expendable_Napalm = { ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.UpArrow, ConsoleKey.LeftArrow };
 
-ConsoleKey[] Solo_Silo = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow };
+  ConsoleKey[] Solo_Silo = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow };
 
-if (string.Join('|', input) == string.Join('|', Railgun))
-{
-  Console.WriteLine(@"                                                  
+  if (string.Join('|', input) == string.Join('|', Railgun))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                      
                                                   
@@ -110,48 +114,51 @@ if (string.Join('|', input) == string.Join('|', Railgun))
            :===:                                  
                                                   
  ");
-  Console.WriteLine("You used a Railgun");
-  Console.WriteLine();
-  Console.WriteLine("Do you.....");
-  Console.WriteLine("Fully charge for more damage but has a chanse to explode");
-  Console.WriteLine("Use safe mode to charge it up (write: Safe charge)");
-  string charge = Console.ReadLine().Trim().ToUpper();
-  if (charge == "FULLY CHARGE")
-  {
-    Random rnd = new Random();
-    int rando = rnd.Next(1, 5);
-    if (rando == 1 || rando == 2 || rando == 3)
-    {
-      Console.WriteLine();
-      Console.WriteLine("Full charge successful");
-      Console.WriteLine("You shot the HIVE LORD"); ;
-      Hive_lord -= 2000;
-      Console.WriteLine("You delt 2 000 damage to HIVE LORD");
-    }
-
-    else if (rando == 4)
-    {
-      Console.WriteLine();
-      Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
-      Console.WriteLine("You died because you charged the railcannon to much");
-      Helldiver -= 150;
-    }
-
-  }
-
-  else if (charge == "SAFE CHARGE")
-  {
+    Console.WriteLine("You used a Railgun");
     Console.WriteLine();
-    Console.WriteLine("Safe charge");
-    Console.WriteLine("You shot the HIVE LORD");
-    Hive_lord -= 600;
-    Console.WriteLine("Damage done = 600");
-  }
-}
+    Console.WriteLine("Do you.....");
+    Console.WriteLine("Fully charge for more damage but has a chance to explode killing you (write: Fully charge)");
+    Console.WriteLine("Use safe mode to charge it up (write: Safe charge)");
+    string charge = Console.ReadLine().Trim().ToUpper();
+    if (charge == "FULLY CHARGE")
+    {
+      Random rnd = new Random();
+      int rando = rnd.Next(1, 5);
+      if (rando == 1 || rando == 2 || rando == 3)
+      {
+        Console.WriteLine();
+        Console.WriteLine("Full charge successful");
+        Console.WriteLine("You shot the HIVE LORD"); ;
+        Hive_lord -= 2000;
+        Console.WriteLine("You dealt 2 000 damage to HIVE LORD");
+        Console.WriteLine(Hive_lord);
+      }
 
-else if (string.Join('|', input) == string.Join('|', Commando))
-{
-  Console.WriteLine(@"                                                  
+      else if (rando == 4)
+      {
+        Console.WriteLine();
+        Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
+        Console.WriteLine("You died because you charged the railcannon to much");
+        Helldiver -= 150;
+        Console.WriteLine(Hive_lord);
+      }
+
+    }
+
+    else if (charge == "SAFE CHARGE")
+    {
+      Console.WriteLine();
+      Console.WriteLine("Safe charge");
+      Console.WriteLine("You shot the HIVE LORD");
+      Hive_lord -= 600;
+      Console.WriteLine("Damage done = 600");
+      Console.WriteLine(Hive_lord);
+    }
+  }
+
+  else if (string.Join('|', input) == string.Join('|', Commando))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
           -+                                      
@@ -178,18 +185,19 @@ else if (string.Join('|', input) == string.Join('|', Commando))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You used a The Commando");
-  Console.WriteLine();
-  Console.WriteLine("Rocket launcher, has a laser that the rockets follow");
-  Console.WriteLine();
-  Console.WriteLine("You shot the HIVE LORD");
-  Console.WriteLine("You delt 5 000 damage to the HIVE LORD");
-  Hive_lord -= 5000;
-}
+    Console.WriteLine("You used a The Commando");
+    Console.WriteLine();
+    Console.WriteLine("Rocket launcher, has a laser that the rockets follow");
+    Console.WriteLine();
+    Console.WriteLine("You shot the HIVE LORD");
+    Console.WriteLine("You dealt 5 000 damage to the HIVE LORD");
+    Hive_lord -= 5000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Orbital_laser))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Orbital_laser))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -216,20 +224,21 @@ else if (string.Join('|', input) == string.Join('|', Orbital_laser))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You used Orbital laser");
-  Console.WriteLine();
-  Console.WriteLine("Orbital laser will be up for 25 sec");
-  Console.WriteLine("Orbital laser does 600 DPS");
-  Console.WriteLine("The orbital laser auto aims");
-  Console.WriteLine();
-  Console.WriteLine("You shot the HIVE LORD");
-  Console.WriteLine("Damage done = 15 000");
-  Hive_lord -= 15000;
-}
+    Console.WriteLine("You used Orbital laser");
+    Console.WriteLine();
+    Console.WriteLine("Orbital laser will be up for 25 sec");
+    Console.WriteLine("Orbital laser does 600 DPS");
+    Console.WriteLine("The orbital laser auto aims");
+    Console.WriteLine();
+    Console.WriteLine("You shot the HIVE LORD");
+    Console.WriteLine("Damage done = 15 000");
+    Hive_lord -= 15000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
-{
-  Console.WriteLine(@" 
+  else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
+  {
+    Console.WriteLine(@" 
 
                       +:                          
                       #@*:                        
@@ -252,18 +261,19 @@ else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
      -----=: :----------  ---------=: :=-----     
                                                   
                                                   ");
-  Console.WriteLine("You used The Orbital Napalm Barrage");
-  Console.WriteLine();
-  Console.WriteLine("A Barrage of fire missiles from the sky");
-  Console.WriteLine("You used the Napalm on hive lord");
-  Console.WriteLine();
-  Console.WriteLine("Damage done = 7 500");
-  Hive_lord -= 7500;
-}
+    Console.WriteLine("You used The Orbital Napalm Barrage");
+    Console.WriteLine();
+    Console.WriteLine("A Barrage of fire missiles from the sky");
+    Console.WriteLine("You used the Napalm on hive lord");
+    Console.WriteLine();
+    Console.WriteLine("Damage done = 7 500");
+    Hive_lord -= 7500;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -290,18 +300,19 @@ else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You used The Orbital Railcannon Striker");
-  Console.WriteLine();
-  Console.WriteLine("A big Railcannon on your ship, very good for big enemys with heavy armor");
-  Console.WriteLine("The Railcannon auto aims");
-  Console.WriteLine();
-  Console.WriteLine("Railcannon does = 7 500 damage");
-  Hive_lord -= 7500;
-}
+    Console.WriteLine("You used The Orbital Railcannon Striker");
+    Console.WriteLine();
+    Console.WriteLine("A big Railcannon on your ship, very good for big enemys with heavy armor");
+    Console.WriteLine("The Railcannon auto aims");
+    Console.WriteLine();
+    Console.WriteLine("Railcannon does = 7 500 damage");
+    Hive_lord -= 7500;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', bomb_500kg))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', bomb_500kg))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -328,38 +339,41 @@ else if (string.Join('|', input) == string.Join('|', bomb_500kg))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You used 500 kg bomb");
-  Console.WriteLine("");
-  Console.WriteLine("Very big bomb and with a precise strike you can kill anybody");
-  Console.WriteLine("You threw randomy and hoped for the best");
+    Console.WriteLine("You used 500 kg bomb");
+    Console.WriteLine("");
+    Console.WriteLine("Very big bomb and with a precise strike you can kill anybody");
+    Console.WriteLine("You threw randomy and hoped for the best");
 
-  Random hello = new Random();
-  int hello1 = hello.Next(1, 4);
+    Random hello = new Random();
+    int hello1 = hello.Next(1, 4);
 
-  if (hello1 == 1)
-  {
-    Console.WriteLine("You hit the HIVE LORD diractly");
-    Console.WriteLine("You did 5 200 damage");
-    Hive_lord -= 5200;
+    if (hello1 == 1)
+    {
+      Console.WriteLine("You hit the HIVE LORD directly");
+      Console.WriteLine("You did 5 200 damage");
+      Hive_lord -= 5200;
+      Console.WriteLine(Hive_lord);
+    }
+
+    else if (hello1 == 2)
+    {
+      Console.WriteLine("The 500kg bomb landed right beside the HIVE LORD");
+      Console.WriteLine("You did 2 400 damage");
+      Hive_lord -= 2400;
+      Console.WriteLine(Hive_lord);
+    }
+
+    else if (hello1 == 3)
+    {
+      Console.WriteLine("You missed, what a shame");
+      Console.WriteLine(Hive_lord);
+    }
+
   }
 
-  else if (hello1 == 2)
+  else if (string.Join('|', input) == string.Join('|', Quasar_Cannon))
   {
-    Console.WriteLine("The 500kg bomb landed right beside the HIVE LORD");
-    Console.WriteLine("You did 2 400 damage");
-    Hive_lord -= 2400;
-  }
-
-  else if (hello1 == 3)
-  {
-    Console.WriteLine("You missed, what a shame");
-  }
-
-}
-
-else if (string.Join('|', input) == string.Join('|', Quasar_Cannon))
-{
-  Console.WriteLine(@"                                                  
+    Console.WriteLine(@"                                                  
                                                   
                               :=                  
                          .:   +@   .:             
@@ -382,18 +396,19 @@ else if (string.Join('|', input) == string.Join('|', Quasar_Cannon))
                 .-.    :=.                        
                                                   
  ");
-  Console.WriteLine("You used Quasar Cannon");
-  Console.WriteLine();
-  Console.WriteLine("A laser cannon, needs to be charged up to deal real damage");
-  Console.WriteLine();
-  Console.WriteLine("Does 2 150 damage");
-  Console.WriteLine("You shot the HIVE LORD");
-  Hive_lord -= 2150;
-}
+    Console.WriteLine("You used Quasar Cannon");
+    Console.WriteLine();
+    Console.WriteLine("A laser cannon, needs to be charged up to deal real damage");
+    Console.WriteLine();
+    Console.WriteLine("Does 2 150 damage");
+    Console.WriteLine("You shot the HIVE LORD");
+    Hive_lord -= 2150;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -418,16 +433,18 @@ else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
               .-                                  
                                                   
 ");
-  Console.WriteLine("You used Shield Generator Pack");
-  Console.WriteLine("");
-  Console.WriteLine("Shield Generator gives you extra chanse on life");
-  Console.WriteLine("Shield gives an additional 200 hp to your main hp amount");
-  Helldiver += 200;
-}
+    Console.WriteLine("You used Shield Generator Pack");
+    Console.WriteLine("");
+    Console.WriteLine("Shield Generator gives you extra chance on life");
+    Console.WriteLine("Shield gives an additional 200 hp to your main hp amount");
+    Helldiver += 200;
+    Console.WriteLine(Hive_lord);
+    Console.WriteLine(Helldiver);
+  }
 
-else if (string.Join('|', input) == string.Join('|', True_flag))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', True_flag))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -454,14 +471,14 @@ else if (string.Join('|', input) == string.Join('|', True_flag))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You got the True Flag, a symbol of hope");
-  Console.WriteLine("You put the flag down and Salut");
-  Console.WriteLine("What? you expected something else, its a flag");
-}
+    Console.WriteLine("You got the True Flag, a symbol of hope");
+    Console.WriteLine("You put the flag down and Salut");
+    Console.WriteLine("What? you expected something else, its a flag");
+  }
 
-else if (string.Join('|', input) == string.Join('|', Autocannon_Sentry))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Autocannon_Sentry))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -485,21 +502,22 @@ else if (string.Join('|', input) == string.Join('|', Autocannon_Sentry))
            -==========================-           
                           ");
 
-  Console.WriteLine("You used a Auto-Cannon Sentry");
-  Console.WriteLine("");
-  Console.WriteLine("Auto cannon is a very strong sentry that can kill anybody");
-  Console.WriteLine("You did 100% damage on one of the bile titan and put the other one on half hp");
-  Console.WriteLine("");
-  Console.WriteLine("You did 16 000 damage to HIVE LORD");
-  Hive_lord -= 16000;
+    Console.WriteLine("You used a Auto-Cannon Sentry");
+    Console.WriteLine("");
+    Console.WriteLine("Auto cannon is a very strong sentry that can kill anybody");
+    Console.WriteLine("You did 100% damage on one of the bile titan and put the other one on half hp");
+    Console.WriteLine("");
+    Console.WriteLine("You did 16 000 damage to HIVE LORD");
+    Hive_lord -= 16000;
+    Console.WriteLine(Hive_lord);
 
-}
+  }
 
-//____________________________________________________________________________________________
+  //____________________________________________________________________________________________
 
-else if (string.Join('|', input) == string.Join('|', Rocket_Sentry))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Rocket_Sentry))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -524,18 +542,19 @@ else if (string.Join('|', input) == string.Join('|', Rocket_Sentry))
                                                   
   ");
 
-  Console.WriteLine("You used the Rocket sentry");
-  Console.WriteLine();
-  Console.WriteLine("A rocket sentry that do big hole on anything it desire");
-  Console.WriteLine("You used the Rocket sentry on the HIVE LORD");
-  Console.WriteLine();
-  Console.WriteLine("The Rocket sentry did 21 000 damage");
-  Hive_lord -= 21000;
-}
+    Console.WriteLine("You used the Rocket sentry");
+    Console.WriteLine();
+    Console.WriteLine("A rocket sentry that do big hole on anything it desire");
+    Console.WriteLine("You used the Rocket sentry on the HIVE LORD");
+    Console.WriteLine();
+    Console.WriteLine("The Rocket sentry did 21 000 damage");
+    Hive_lord -= 21000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Emancipator_Exosuit))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Emancipator_Exosuit))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -562,18 +581,19 @@ else if (string.Join('|', input) == string.Join('|', Emancipator_Exosuit))
                                                   
                                                   
                                                   ");
-  Console.WriteLine("You used the Emancipator exosuit");
-  Console.WriteLine();
-  Console.WriteLine("Big robot with 2 auto cannons on the side");
-  Console.WriteLine("Robot gives you an extra life and does a lot of damage");
-  Console.WriteLine();
-  Console.WriteLine("The Emancipator Exosuit did 17 000 damage");
-  Hive_lord -= 17000;
-}
+    Console.WriteLine("You used the Emancipator exosuit");
+    Console.WriteLine();
+    Console.WriteLine("Big robot with 2 auto cannons on the side");
+    Console.WriteLine("Robot gives you an extra life and does a lot of damage");
+    Console.WriteLine();
+    Console.WriteLine("The Emancipator Exosuit did 17 000 damage");
+    Hive_lord -= 17000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Portable_Hellbomb))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Portable_Hellbomb))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -598,18 +618,19 @@ else if (string.Join('|', input) == string.Join('|', Portable_Hellbomb))
          :::::::::::::::                          
                                                   
 ");
-  Console.WriteLine("You used the Portable Hellbomb");
-  Console.WriteLine("");
-  Console.WriteLine("Works like a hellbomb, but its a backpack");
-  Console.WriteLine("You strap on the Portable Hellbomb and run into the HIVE LORD");
-  Console.WriteLine("");
-  Console.WriteLine("You did 15 000 damage to the Hive lord at the cost of your life");
-  Hive_lord -= 15000;
-}
+    Console.WriteLine("You used the Portable Hellbomb");
+    Console.WriteLine("");
+    Console.WriteLine("Works like a hellbomb, but its a backpack");
+    Console.WriteLine("You strap on the Portable Hellbomb and run into the HIVE LORD");
+    Console.WriteLine("");
+    Console.WriteLine("You did 15 000 damage to the Hive lord at the cost of your life");
+    Hive_lord -= 15000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Expendable_Napalm))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Expendable_Napalm))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -635,19 +656,20 @@ else if (string.Join('|', input) == string.Join('|', Expendable_Napalm))
                                                   
 
 ");
-  Console.WriteLine("You used Expendable Napalm");
-  Console.WriteLine("");
-  Console.WriteLine("A rocket louncher with a napalm cluster bomb");
-  Console.WriteLine("Burns anything in its way");
-  Console.WriteLine("You shot the Expendable Napalm on the HIVE LORD");
-  Console.WriteLine("");
-  Console.WriteLine("You did 2 000 damage on the HIVE LORD");
-  Hive_lord -= 2000;
-}
+    Console.WriteLine("You used Expendable Napalm");
+    Console.WriteLine("");
+    Console.WriteLine("A rocket louncher with a napalm cluster bomb");
+    Console.WriteLine("Burns anything in its way");
+    Console.WriteLine("You shot the Expendable Napalm on the HIVE LORD");
+    Console.WriteLine("");
+    Console.WriteLine("You did 2 000 damage on the HIVE LORD");
+    Hive_lord -= 2000;
+    Console.WriteLine(Hive_lord);
+  }
 
-else if (string.Join('|', input) == string.Join('|', Solo_Silo))
-{
-  Console.WriteLine(@"                                                  
+  else if (string.Join('|', input) == string.Join('|', Solo_Silo))
+  {
+    Console.WriteLine(@"                                                  
                                                   
                                                   
                                                   
@@ -673,19 +695,20 @@ else if (string.Join('|', input) == string.Join('|', Solo_Silo))
    +#****************************************#+   
                                                   
 ");
-  Console.WriteLine("You used the Solo Silo");
-  Console.WriteLine("");
-  Console.WriteLine("The Solo Silo get placed on the ground, a Missile come's out");
-  Console.WriteLine("With the missle come's out a pistol with laser on it, where every you point the laser on, thats where the missile go");
-  Console.WriteLine("You pointed it on the Hive lord");
-  Console.WriteLine("");
-  Console.WriteLine("The solo silo did 4 500 damage");
-  Hive_lord -= 4500;
-}
+    Console.WriteLine("You used the Solo Silo");
+    Console.WriteLine("");
+    Console.WriteLine("The Solo Silo get placed on the ground, a Missile come's out");
+    Console.WriteLine("With the missle come's out a pistol with laser on it, where every you point the laser on, thats where the missile go");
+    Console.WriteLine("You pointed it on the Hive lord");
+    Console.WriteLine("");
+    Console.WriteLine("The solo silo did 4 500 damage");
+    Hive_lord -= 4500;
+    Console.WriteLine(Hive_lord);
+  }
 
-else
-{
-  Console.WriteLine(@"                
+  else
+  {
+    Console.WriteLine(@"                
                 
  ,--,     ,--,  
  |'. \   / .`|  
@@ -701,6 +724,42 @@ else
 ;   |/   \  ' | 
 `---'     `--`  
                 ");
-  Console.WriteLine("Try again.....");
+    Console.WriteLine("Try again.....");
+  }
+  Console.ReadLine();
+
+    if (Helldiver <= 0)
+    {
+        Console.WriteLine("You lose");
+        Console.WriteLine("Better luck next time but for the time being the terminids have won");
+        LoseTune();
+        Console.ReadLine();
+        break;
+    }
+    else if (Hive_lord <= 0)
+    {
+        Console.WriteLine("Victory! You defeated the Hive Lord!");
+        VictoryTune();
+        Console.ReadLine();
+        break;
+    }
 }
-Console.ReadLine();
+
+static void VictoryTune()
+{
+  Console.Beep(523, 200);
+  Console.Beep(659, 200);
+  Console.Beep(783, 200);
+  Console.Beep(1046, 400);
+}
+
+static void LoseTune()
+{
+    Console.Beep(400, 400);
+    Console.Beep(350, 400);
+    Console.Beep(300, 600); 
+}
+
+
+
+  
