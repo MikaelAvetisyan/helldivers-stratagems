@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Net.Mail;
 //add status of the hive lord (make better)
 //add fighting 
-// add when about to die, give option for stim
+//add when about to die, give option for stim
 int Hive_lord = 30000;
 int Helldiver = 150;
 int stims;
@@ -136,7 +136,7 @@ while (true)
         Console.WriteLine("You shot the HIVE LORD"); ;
         Console.WriteLine("You dealt 2 000 damage to HIVE LORD");
         Hive_lord -= 2000;
-        Console.WriteLine();
+        Console.WriteLine("____________________________");
         Console.WriteLine("Hive lords HP =" + Hive_lord);
       }
 
@@ -146,7 +146,7 @@ while (true)
         Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
         Console.WriteLine("You died because you charged the railcannon to much");
         Helldiver -= 150;
-        Console.WriteLine();
+        Console.WriteLine("____________________________");
         Console.WriteLine("Hive lords HP =" + Hive_lord);
       }
 
@@ -159,7 +159,7 @@ while (true)
       Console.WriteLine("You shot the HIVE LORD");
       Console.WriteLine("Damage done = 600");
       Hive_lord -= 600;
-      Console.WriteLine();
+      Console.WriteLine("____________________________");
       Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
   }
@@ -200,7 +200,7 @@ while (true)
     Console.WriteLine("You shot the HIVE LORD");
     Console.WriteLine("You dealt 5 000 damage to the HIVE LORD");
     Hive_lord -= 5000;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -242,7 +242,7 @@ while (true)
     Console.WriteLine("You shot the HIVE LORD");
     Console.WriteLine("Damage done = 15 000");
     Hive_lord -= 15000;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -278,7 +278,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("Damage done = 7 500");
     Hive_lord -= 7500;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -318,7 +318,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("Railcannon does = 7 500 damage");
     Hive_lord -= 7500;
-    Console.WriteLine();
+   Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -365,7 +365,7 @@ while (true)
       Console.WriteLine("You hit the HIVE LORD directly");
       Console.WriteLine("You did 5 200 damage");
       Hive_lord -= 5200;
-      Console.WriteLine();
+      Console.WriteLine("____________________________");
       Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
@@ -374,14 +374,14 @@ while (true)
       Console.WriteLine("The 500kg bomb landed right beside the HIVE LORD");
       Console.WriteLine("You did 2 400 damage");
       Hive_lord -= 2400;
-      Console.WriteLine();
+      Console.WriteLine("____________________________");
       Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
     else if (hello1 == 3)
     {
       Console.WriteLine("You missed, what a shame");
-      Console.WriteLine();
+      Console.WriteLine("____________________________");
       Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
@@ -419,7 +419,7 @@ while (true)
     Console.WriteLine("Does 2 150 damage");
     Console.WriteLine("You shot the HIVE LORD");
     Hive_lord -= 2150;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -455,7 +455,7 @@ while (true)
     Console.WriteLine("Shield Generator gives you extra chance on life");
     Console.WriteLine("Shield gives an additional 200 hp to your main hp amount");
     Helldiver += 200;
-    Console.WriteLine();
+    Console.WriteLine("_________________________________________");
     Console.WriteLine("You total health and armor =" + Helldiver);
   }
 
@@ -527,7 +527,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("You did 16 000 damage to HIVE LORD");
     Hive_lord -= 16000;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
 
   }
@@ -568,7 +568,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("The Rocket sentry did 21 000 damage");
     Hive_lord -= 21000;
-    Console.WriteLine();
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -610,7 +610,7 @@ while (true)
     Console.WriteLine("The Emancipator Exosuit did 17 000 damage");
     Hive_lord -= 17000;
     Helldiver += 850;
-    Console.WriteLine();
+    Console.WriteLine("___________________________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
     Console.WriteLine("Hellldivers health and armor =" + Helldiver);
 
@@ -651,7 +651,7 @@ while (true)
     Console.WriteLine("You did 15 000 damage to the Hive lord at the cost of your life");
     Hive_lord -= 15000;
     Helldiver -= 150;
-    Console.WriteLine();
+    Console.WriteLine("_______________________________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
     Console.WriteLine("Helldiver took a lot of damage => " + Helldiver);
 
@@ -693,6 +693,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("You did 2 000 damage on the HIVE LORD");
     Hive_lord -= 2000;
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -732,6 +733,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("The solo silo did 4 500 damage");
     Hive_lord -= 4500;
+    Console.WriteLine("____________________________");
     Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
@@ -768,7 +770,7 @@ while (true)
     Console.WriteLine("Restors ammo, stims and grenades");
     Console.WriteLine("Its vital for combat, gives the user higher chanse of survival in the battlefield");
     Console.WriteLine("This resupply is special, you get extra slots for your stims");
-    Console.WriteLine("");
+    Console.WriteLine("______________________");
     Console.WriteLine("You got" + (stims + 4));
   }
 
