@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.ComponentModel;
-
-Console.SetBufferSize(300, 1000); 
-Console.SetWindowSize(200, 60);
+using System.Net.Mail;
 //add status of the hive lord (make better)
 //add arrows to the to the commands
+//add fighting 
 int Hive_lord = 30000;
 int Helldiver = 150;
+int stims;
+stims = 4;
+int grenades;
+grenades = 4;
 
 
 Console.WriteLine(@" 
@@ -46,7 +49,7 @@ while (true)
   Console.WriteLine("Emancipator Exosuit => Left - Down - Right - Up - Left - Down - Up");
   Console.WriteLine();
   Console.WriteLine("Portable Hellbomb => Down - Right - Up - Up - Up");
-  Console.WriteLine("");
+  Console.WriteLine();
 
 
 
@@ -92,6 +95,8 @@ while (true)
 
   ConsoleKey[] Solo_Silo = { ConsoleKey.DownArrow, ConsoleKey.UpArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow };
 
+  ConsoleKey[] Secret = { ConsoleKey.UpArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.A, ConsoleKey.B };
+
   if (string.Join('|', input) == string.Join('|', Railgun))
   {
     Console.WriteLine(@"                                                  
@@ -131,7 +136,7 @@ while (true)
         Console.WriteLine("You shot the HIVE LORD"); ;
         Hive_lord -= 2000;
         Console.WriteLine("You dealt 2 000 damage to HIVE LORD");
-        Console.WriteLine(Hive_lord);
+        Console.WriteLine("Hive lords HP =" + Hive_lord);
       }
 
       else if (rando == 4)
@@ -140,7 +145,7 @@ while (true)
         Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
         Console.WriteLine("You died because you charged the railcannon to much");
         Helldiver -= 150;
-        Console.WriteLine(Hive_lord);
+        Console.WriteLine("Hive lords HP =" + Hive_lord);
       }
 
     }
@@ -152,7 +157,7 @@ while (true)
       Console.WriteLine("You shot the HIVE LORD");
       Hive_lord -= 600;
       Console.WriteLine("Damage done = 600");
-      Console.WriteLine(Hive_lord);
+      Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
   }
 
@@ -192,7 +197,7 @@ while (true)
     Console.WriteLine("You shot the HIVE LORD");
     Console.WriteLine("You dealt 5 000 damage to the HIVE LORD");
     Hive_lord -= 5000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Orbital_laser))
@@ -233,7 +238,7 @@ while (true)
     Console.WriteLine("You shot the HIVE LORD");
     Console.WriteLine("Damage done = 15 000");
     Hive_lord -= 15000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Orbital_Napalm_Barrage))
@@ -268,7 +273,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("Damage done = 7 500");
     Hive_lord -= 7500;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Orbital_Railcannon_Strike))
@@ -307,7 +312,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("Railcannon does = 7 500 damage");
     Hive_lord -= 7500;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', bomb_500kg))
@@ -352,7 +357,7 @@ while (true)
       Console.WriteLine("You hit the HIVE LORD directly");
       Console.WriteLine("You did 5 200 damage");
       Hive_lord -= 5200;
-      Console.WriteLine(Hive_lord);
+      Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
     else if (hello1 == 2)
@@ -360,13 +365,13 @@ while (true)
       Console.WriteLine("The 500kg bomb landed right beside the HIVE LORD");
       Console.WriteLine("You did 2 400 damage");
       Hive_lord -= 2400;
-      Console.WriteLine(Hive_lord);
+      Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
     else if (hello1 == 3)
     {
       Console.WriteLine("You missed, what a shame");
-      Console.WriteLine(Hive_lord);
+      Console.WriteLine("Hive lords HP =" + Hive_lord);
     }
 
   }
@@ -403,7 +408,7 @@ while (true)
     Console.WriteLine("Does 2 150 damage");
     Console.WriteLine("You shot the HIVE LORD");
     Hive_lord -= 2150;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Shield_Generator_Pack))
@@ -438,7 +443,7 @@ while (true)
     Console.WriteLine("Shield Generator gives you extra chance on life");
     Console.WriteLine("Shield gives an additional 200 hp to your main hp amount");
     Helldiver += 200;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
     Console.WriteLine(Helldiver);
   }
 
@@ -509,7 +514,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("You did 16 000 damage to HIVE LORD");
     Hive_lord -= 16000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
 
   }
 
@@ -549,7 +554,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("The Rocket sentry did 21 000 damage");
     Hive_lord -= 21000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Emancipator_Exosuit))
@@ -588,7 +593,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("The Emancipator Exosuit did 17 000 damage");
     Hive_lord -= 17000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Portable_Hellbomb))
@@ -625,7 +630,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("You did 15 000 damage to the Hive lord at the cost of your life");
     Hive_lord -= 15000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Expendable_Napalm))
@@ -664,7 +669,7 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("You did 2 000 damage on the HIVE LORD");
     Hive_lord -= 2000;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
   }
 
   else if (string.Join('|', input) == string.Join('|', Solo_Silo))
@@ -703,7 +708,44 @@ while (true)
     Console.WriteLine("");
     Console.WriteLine("The solo silo did 4 500 damage");
     Hive_lord -= 4500;
-    Console.WriteLine(Hive_lord);
+    Console.WriteLine("Hive lords HP =" + Hive_lord);
+  }
+
+  else if (string.Join('|', input) == string.Join('|', Secret))
+  {
+    Console.WriteLine(@"                                             
+ ********                            ******* 
+ ******                                ***** 
+ ****                                   **** 
+ **  ************ @@@@  @@@@ ************  * 
+      ***********@@@@@  @@@@ ***********     
+       **********@@@@@@@@@@@ **********      
+        *********@@@@@@@@@@@ *********       
+         ********@@@@@@@@@@@ *******         
+          *******@@@@@@@@@@@ ******          
+            @@@@   @@@@@@@@   @@@@           
+           @@@@@   @@@@@@@@  @@@@@           
+           @@@@@@@@@@@@@@@@@@@@@@@           
+           @@@@@@@@@@@@@@@@@@@@@@@           
+           @@@@@@@@@@@@@@@@@@@@@@@           
+           @@@@@@@@@@@@@@@@@@@@@@@           
+                   ********                  
+                   ********                  
+                    ******                   
+                    *****                    
+ ***                 ***                 *** 
+ *****                                 ***** 
+ *******                              ****** 
+ ********                            ******* ");
+
+
+    Console.WriteLine("You called for Resupply");
+    Console.WriteLine("");
+    Console.WriteLine("Restors ammo, stims and grenades");
+    Console.WriteLine("Its vital for combat, gives the user higher chanse of survival in the battlefield");
+    Console.WriteLine("This resupply is special, you get extra slots for your stims");
+    Console.WriteLine("");
+    Console.WriteLine("You got" + (stims + 4));
   }
 
   else
