@@ -31,7 +31,7 @@ Console.WriteLine();
 while (true)
 {
   Console.WriteLine("------------ Stratagems available ------------");
-  Console.WriteLine("Railgun => Down - -> - Down - Up - Left - Right");
+  Console.WriteLine("Railgun => Down - Right - Down - Up - Left - Right");
   Console.WriteLine("Commando Rocket Launcher => Down - Left - Up - Down - Right");
   Console.WriteLine("Quasar Cannon => Down - Down - Up - Left - Right");
   Console.WriteLine("Shield Generator Pack => Down - Up - Left - Right - Left - Right");
