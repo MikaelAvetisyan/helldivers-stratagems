@@ -7,8 +7,7 @@ using System.ComponentModel;
 using System.Net.Mail;
 
 //add status of the hive lord (make better)
-//add fighting 
-//add when about to die, give option for stim
+//add hive lord attacks back
 int Hive_lord = 30000;
 int Helldiver = 150;
 int stims;
@@ -52,6 +51,7 @@ while (true)
   Console.WriteLine("Portable Hellbomb => Down - Right - Up - Up - Up");
   Console.WriteLine();
 
+  bool Stim = true;
 
   List<ConsoleKey> allowedKeys = [ConsoleKey.UpArrow,ConsoleKey.DownArrow,ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.A, ConsoleKey.B];
 
@@ -99,6 +99,8 @@ while (true)
 
   ConsoleKey[] Secret = { ConsoleKey.UpArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.A, ConsoleKey.B };
 
+  ConsoleKey[] Stim_yourself = { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow };
+
   if (string.Join('|', input) == string.Join('|', Railgun))
   {
     Console.WriteLine
@@ -121,7 +123,7 @@ while (true)
                             :===:                                  
                                                                     
                     """);
-    
+
 
     Console.WriteLine("You used a Railgun");
     Console.WriteLine();
@@ -807,44 +809,86 @@ while (true)
 
   if (Helldiver <= 0)
   {
-    LoseTune();
-    Console.WriteLine("------------------------------------");
-    Console.WriteLine("You lose");
-    int ello1 = new Random().Next(1, 5);
-
-    string line1 = ello1 switch
+    if (Stim == true)
     {
-      1 => "Better luck next time but for the time being the terminids have won",
-      2 => "Return, refit, and redeploy to purge the stain of this failure with the peroxide of victory.",
-      3 => "Defeat is but the catalyst of its own rectification.",
-      4 => "Victory was never in doubt.",
-    };
-    Console.WriteLine(line1);
-    Console.ReadLine();
-    break;
-  }
-  else if (Hive_lord <= 0)
-  {
-    VictoryTune();
-    Console.WriteLine("------------------------------------");
-    Console.WriteLine("Victory! You defeated the Hive Lord!");
+      Console.WriteLine("You are about to die, use your stim to surive");
+      Console.WriteLine("Do this combination to stim your self");
+      Console.WriteLine("Up - Down - Down - Right - Down - Left:");
 
-    int ello = new Random().Next(1, 8);
+      //doesnt register, goes to the else and doesnt work even tho you input the right 
 
-    string line = ello switch
+      while ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter)
+      {
+        if (allowedKeys.Contains(key))
+        {
+          input.Add(key);
+          Console.WriteLine(key);
+        }
+      }
+
+
+      if (string.Join('|', input) == string.Join('|', Stim_yourself))
+      {
+        Console.WriteLine("You healed yourself");
+        Console.WriteLine("+150 hp granted");
+        Helldiver += 150; //make it go to 150 not + 150
+        Console.ReadLine();
+      }
+      else
+      {
+        Console.WriteLine("You missed your chanse to stim yourself, you died bleeding out");
+        Console.ReadLine();
+      }
+    }
+
+    else if (Stim == false)
     {
-      1 => "That's one more victory for the right side of history!",
-      2 => "Managed democracy offers absolute freedom; freedom from the burden of choice",
-      3 => "The only good bug is a dead bug",
-      4 => "Always good to have another hero onboard",
-      5 => "How about a nice cup of LIBER-TEA?",
-      6 => "How'd you like the taste of freedom?",
-      7 => "We cannot let the enemy any closer to Super Earth",
-    };
-    Console.WriteLine(line);
-    Console.ReadLine();
-    break;
+      Console.WriteLine("You dont have any stims left so sorry, you died bleeding out");
+      Console.ReadLine();
+    }
   }
+
+
+  if (Helldiver <= 0)
+    {
+      LoseTune();
+      Console.WriteLine("------------------------------------");
+      Console.WriteLine("You lose");
+      int ello1 = new Random().Next(1, 5);
+
+      string line1 = ello1 switch
+      {
+        1 => "Better luck next time but for the time being the terminids have won",
+        2 => "Return, refit, and redeploy to purge the stain of this failure with the peroxide of victory.",
+        3 => "Defeat is but the catalyst of its own rectification.",
+        4 => "Victory was never in doubt.",
+      };
+      Console.WriteLine(line1);
+      Console.ReadLine();
+      break;
+    }
+    else if (Hive_lord <= 0)
+    {
+      VictoryTune();
+      Console.WriteLine("------------------------------------");
+      Console.WriteLine("Victory! You defeated the Hive Lord!");
+
+      int ello = new Random().Next(1, 8);
+
+      string line = ello switch
+      {
+        1 => "That's one more victory for the right side of history!",
+        2 => "Managed democracy offers absolute freedom; freedom from the burden of choice",
+        3 => "The only good bug is a dead bug",
+        4 => "Always good to have another hero onboard",
+        5 => "How about a nice cup of LIBER-TEA?",
+        6 => "How'd you like the taste of freedom?",
+        7 => "We cannot let the enemy any closer to Super Earth",
+      };
+      Console.WriteLine(line);
+      Console.ReadLine();
+      break;
+    }
 }
 
 static void VictoryTune()
