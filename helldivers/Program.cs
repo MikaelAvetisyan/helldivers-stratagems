@@ -5,15 +5,13 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Net.Mail;
+using System.Diagnostics;
 
-//add status of the hive lord (make better)
-//add hive lord attacks back
+
 int Hive_lord = 30000;
 int Helldiver = 150;
 int stims;
 stims = 4;
-int grenades;
-grenades = 4;
 
 
 Console.WriteLine(@" 
@@ -25,7 +23,12 @@ Console.WriteLine(@"
 Console.WriteLine("------ Welcome to Helldiver Stratagem Game, press enter to continue ------");
 Console.ReadLine();
 Console.WriteLine("You are spreading democracy and a big worm drilled up to the surface");
-Console.WriteLine("The big worm's name is THE HIVE LORD");
+Console.WriteLine();
+Console.WriteLine(@"===== ALERT =====
+A massive worm bursts from the ground!
+Designation: HIVE LORD
+==================");
+Console.WriteLine();
 Console.WriteLine("HIVE LORD HP = 30 000");
 Console.WriteLine();
 while (true)
@@ -50,8 +53,6 @@ while (true)
   Console.WriteLine();
   Console.WriteLine("Portable Hellbomb => Down - Right - Up - Up - Up");
   Console.WriteLine();
-
-  bool Stim = true;
 
   List<ConsoleKey> allowedKeys = [ConsoleKey.UpArrow,ConsoleKey.DownArrow,ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.A, ConsoleKey.B];
 
@@ -99,8 +100,6 @@ while (true)
 
   ConsoleKey[] Secret = { ConsoleKey.UpArrow, ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow, ConsoleKey.A, ConsoleKey.B };
 
-  ConsoleKey[] Stim_yourself = { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow };
-
   if (string.Join('|', input) == string.Join('|', Railgun))
   {
     Console.WriteLine
@@ -124,7 +123,7 @@ while (true)
                                                                     
                     """);
 
-
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used a Railgun");
     Console.WriteLine();
     Console.WriteLine("Do you.....");
@@ -133,8 +132,8 @@ while (true)
     string charge = Console.ReadLine().Trim().ToUpper();
     if (charge == "FULLY CHARGE")
     {
-      Random rnd = new Random();
-      int rando = rnd.Next(1, 5);
+      Random rnd1 = new Random();
+      int rando = rnd1.Next(1, 5);
       if (rando == 1 || rando == 2 || rando == 3)
       {
         Console.WriteLine();
@@ -149,8 +148,9 @@ while (true)
       else if (rando == 4)
       {
         Console.WriteLine();
-        Console.WriteLine("You charged the railgun and the KABOOOM!!!!!");
-        Console.WriteLine("You died because you charged the railcannon to much");
+        Console.WriteLine(@"!!! SYSTEM FAILURE !!!
+You overloaded the Railcannon.
+Your Helldiver is vaporized.");
         Helldiver -= 150;
         Console.WriteLine("____________________________");
         Console.WriteLine("Hive lords HP = " + Hive_lord);
@@ -163,7 +163,7 @@ while (true)
       Console.WriteLine();
       Console.WriteLine("Safe charge");
       Console.WriteLine("You shot the HIVE LORD");
-      Console.WriteLine("Damage done = 600");
+      Console.WriteLine("Damage dealt: 600");
       Hive_lord -= 600;
       Console.WriteLine("____________________________");
       Console.WriteLine("Hive lords HP = " + Hive_lord);
@@ -171,7 +171,8 @@ while (true)
 
     else
     {
-      Console.WriteLine("Wrong input, Your super destroyer complimented how stupid you are");
+      Console.WriteLine(@"[!] Invalid command.
+Your Super Destroyer captain laughs at your incompetence.");
     }
   }
 
@@ -204,7 +205,8 @@ while (true)
                                                   
                                                   
                                                   ");
-    Console.WriteLine("You used a The Commando");
+    Console.WriteLine("===== ATTACK PHASE =====");
+    Console.WriteLine("You used a the Commando");
     Console.WriteLine();
     Console.WriteLine("Rocket launcher, has a laser that the rockets follow");
     Console.WriteLine();
@@ -244,6 +246,7 @@ while (true)
                                                   
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used Orbital laser");
     Console.WriteLine();
     Console.WriteLine("Orbital laser will be up for 25 sec");
@@ -282,6 +285,7 @@ while (true)
      -----=: :----------  ---------=: :=-----     
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used The Orbital Napalm Barrage");
     Console.WriteLine();
     Console.WriteLine("A Barrage of fire missiles from the sky");
@@ -322,6 +326,7 @@ while (true)
                                                   
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used The Orbital Railcannon Striker");
     Console.WriteLine();
     Console.WriteLine("A big Railcannon on your ship, very good for big enemys with heavy armor");
@@ -362,10 +367,13 @@ while (true)
                                                   
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK PHASE =====");                                             
     Console.WriteLine("You used 500 kg bomb");
     Console.WriteLine("");
     Console.WriteLine("Very big bomb and with a precise strike you can kill anybody");
-    Console.WriteLine("You threw randomy and hoped for the best");
+    Console.WriteLine(@">>> Panicked throw!
+Grenade sails wildly...
+");
     Console.WriteLine();
 
     Random hello = new Random();
@@ -423,6 +431,7 @@ while (true)
                 .-.    :=.                        
                                                   
  ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used Quasar Cannon");
     Console.WriteLine();
     Console.WriteLine("A laser cannon, needs to be charged up to deal real damage");
@@ -461,6 +470,7 @@ while (true)
               .-                                  
                                                   
 ");
+    Console.WriteLine("===== DEFENSE PHASE =====");
     Console.WriteLine("You used Shield Generator Pack");
     Console.WriteLine("");
     Console.WriteLine("Shield Generator gives you extra chance on life");
@@ -499,6 +509,7 @@ while (true)
                                                   
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK PHASE? =====");
     Console.WriteLine("You got the True Flag, a symbol of hope");
     Console.WriteLine("You put the flag down and Salut");
     Console.WriteLine();
@@ -530,7 +541,7 @@ while (true)
              ========================             
            -==========================-           
                           ");
-
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used a Auto-Cannon Sentry");
     Console.WriteLine("");
     Console.WriteLine("Auto cannon is a very strong sentry that can kill anybody");
@@ -571,7 +582,7 @@ while (true)
            -==========================-           
                                                   
   ");
-
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used the Rocket sentry");
     Console.WriteLine();
     Console.WriteLine("A rocket sentry that do big hole on anything it desire");
@@ -612,6 +623,7 @@ while (true)
                                                   
                                                   
                                                   ");
+    Console.WriteLine("===== ATTACK/DEFENSE PHASE =====");
     Console.WriteLine("You used the Emancipator exosuit");
     Console.WriteLine();
     Console.WriteLine("Big robot with 2 auto cannons on the side");
@@ -654,6 +666,7 @@ while (true)
          :::::::::::::::                          
                                                   
 ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used the Portable Hellbomb");
     Console.WriteLine("");
     Console.WriteLine("Works like a hellbomb, but its a backpack");
@@ -696,6 +709,7 @@ while (true)
                                                   
 
 ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used Expendable Napalm");
     Console.WriteLine("");
     Console.WriteLine("A rocket louncher with a napalm cluster bomb");
@@ -736,6 +750,7 @@ while (true)
    +#****************************************#+   
                                                   
 ");
+    Console.WriteLine("===== ATTACK PHASE =====");
     Console.WriteLine("You used the Solo Silo");
     Console.WriteLine("");
     Console.WriteLine("The Solo Silo get placed on the ground, a Missile come's out");
@@ -775,7 +790,7 @@ while (true)
  *******                              ****** 
  ********                            ******* ");
 
-
+    Console.WriteLine("===== RESUPPLY PHASE =====");
     Console.WriteLine("You called for Resupply");
     Console.WriteLine("");
     Console.WriteLine("Restors ammo, stims and grenades");
@@ -805,19 +820,53 @@ while (true)
                 ");
     Console.WriteLine("Try again.....");
   }
+  if (Helldiver > 0)
+  {
+    Console.ReadLine();
+    Console.WriteLine("____________________________________________");
+    Console.WriteLine("<<< Hive Lord retaliates! >>>");
+    int rnd = new Random().Next(1, 3);
+    if (rnd == 1)
+    {
+      Console.WriteLine("The bile titan body slams you");
+      Console.WriteLine("The bile did 200 damage to helldiver");
+      Console.WriteLine("____________________________________________");
+      Helldiver -= 200;
+    }
+
+    else if (rnd == 2)
+    {
+      Console.WriteLine("The bile titan spews acid on you");
+      Console.WriteLine("Bile titan did 250 damage");
+      Console.WriteLine("--------------------------------------------");
+      Helldiver -= 250;
+    }
+  }
   Console.ReadLine();
 
+    bool Stim = true;
+
+    if (stims <= 0)
+    {
+      bool stim = false;
+    }
+  
   if (Helldiver <= 0)
   {
+    Stopwatch sw = new Stopwatch();
+    sw.Start();
+
     if (Stim == true)
     {
-      Console.WriteLine("You are about to die, use your stim to surive");
-      Console.WriteLine("Do this combination to stim your self");
-      Console.WriteLine("Up - Down - Down - Right - Down - Left:");
+      Console.WriteLine("QUICK, You got 10 sec before you bleeding out, stim yourself to stop the bleeding");
+      Console.WriteLine("Do the arrow combo below to stim yourself");
+      Console.WriteLine("______________________________________");
+      Console.WriteLine("Up - Down - Down - Right - Down - Left");
+      Console.WriteLine();
 
-      //doesnt register, goes to the else and doesnt work even tho you input the right 
+      input = [];
 
-      while ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter)
+      while (sw.Elapsed.TotalSeconds < 10 && ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter))
       {
         if (allowedKeys.Contains(key))
         {
@@ -826,24 +875,31 @@ while (true)
         }
       }
 
+      ConsoleKey[] Stim_yourself = { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow };
 
-      if (string.Join('|', input) == string.Join('|', Stim_yourself))
+      if ((input.SequenceEqual(Stim_yourself)) && sw.Elapsed.TotalSeconds < 10)
       {
-        Console.WriteLine("You healed yourself");
-        Console.WriteLine("+150 hp granted");
-        Helldiver += 150; //make it go to 150 not + 150
+        Console.WriteLine();
+        Console.WriteLine(@"+++ Stim Injected! +++
+Vital signs stabilizing...
+HP restored: +150");
+        Helldiver = 150;
         Console.ReadLine();
       }
       else
       {
-        Console.WriteLine("You missed your chanse to stim yourself, you died bleeding out");
+        Console.WriteLine();
+        Console.WriteLine("You didnt stim yourself so died by bleeding out");
         Console.ReadLine();
       }
     }
 
     else if (Stim == false)
     {
-      Console.WriteLine("You dont have any stims left so sorry, you died bleeding out");
+      Console.WriteLine(@"!!! CRITICAL !!!
+No stims remaining.
+You collapse, bleeding out on the battlefield.
+");
       Console.ReadLine();
     }
   }
@@ -853,7 +909,10 @@ while (true)
     {
       LoseTune();
       Console.WriteLine("------------------------------------");
-      Console.WriteLine("You lose");
+      Console.WriteLine(@"=== MISSION FAILED ===
+Your Helldiver has fallen.
+The Hive Lord still reigns...
+");
       int ello1 = new Random().Next(1, 5);
 
       string line1 = ello1 switch
@@ -871,7 +930,8 @@ while (true)
     {
       VictoryTune();
       Console.WriteLine("------------------------------------");
-      Console.WriteLine("Victory! You defeated the Hive Lord!");
+      Console.WriteLine(@"=== MISSION COMPLETE ===
+The Hive Lord collapses!");
 
       int ello = new Random().Next(1, 8);
 
