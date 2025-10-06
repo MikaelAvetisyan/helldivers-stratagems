@@ -1,13 +1,5 @@
-﻿using System.Text.RegularExpressions;
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-using System.ComponentModel;
-using System.Net.Mail;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-//add limit to how many stratagems you can use
 int Hive_lord = 30000;
 int Helldiver = 150;
 int stims = 4;
@@ -881,11 +873,11 @@ Grenade sails wildly...
       Console.WriteLine("The Hive Lord spews acid on you");
       Console.WriteLine("The Hive lord did 250 damage");
       Console.WriteLine("--------------------------------------------");
-      if (relay = false)
+      if (relay == false)
       {
         Helldiver -= 250;
       }
-      else if (relay = true)
+      else if (relay == true)
       {
         Console.WriteLine("Or did he?");
         Console.WriteLine("You have Shield generator relay on");
@@ -899,7 +891,7 @@ Grenade sails wildly...
 
     if (stims <= 0)
     {
-      bool stim = false;
+      Stim = false;
     }
 
     if (Helldiver <= 0)
@@ -917,7 +909,7 @@ Grenade sails wildly...
 
         input = [];
 
-        while (sw.Elapsed.TotalSeconds < 10 && ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter))
+        while (sw.Elapsed.TotalSeconds < 5 && ((key = Console.ReadKey(true).Key) != ConsoleKey.Enter))
         {
           if (allowedKeys.Contains(key))
           {
@@ -928,7 +920,7 @@ Grenade sails wildly...
 
         ConsoleKey[] Stim_yourself = { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.DownArrow, ConsoleKey.RightArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow };
 
-        if ((input.SequenceEqual(Stim_yourself)) && sw.Elapsed.TotalSeconds < 10)
+        if ((input.SequenceEqual(Stim_yourself)) && sw.Elapsed.TotalSeconds < 5)
         {
           Console.WriteLine();
           Console.WriteLine(@"+++ Stim Injected! +++
